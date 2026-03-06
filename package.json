@@ -1,0 +1,21 @@
+{
+  "name": "code-monitors-demo",
+  "version": "1.0.0",
+  "description": "Demo codebase for Sourcegraph Code Monitoring video",
+  "private": true,
+  "scripts": {
+    "demo": "node scripts/demo-flow.js",
+    "demo:run": "npm run demo -- run",
+    "demo:reset": "npm run demo -- reset",
+    "demo:status": "npm run demo -- status",
+    "debug:users": "ts-node scripts/debug-users.ts",
+    "healthcheck": "ts-node -e \"import {db} from './src/utils/database'; db.healthCheck().then(console.log)\""
+  },
+  "dependencies": {
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2"
+  }
+}

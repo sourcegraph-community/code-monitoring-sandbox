@@ -1,0 +1,19 @@
+# Demo 03: "New Sensitive Log Calls"
+# Monitor query: logSensitiveData() type:diff after:"1 day ago"
+#
+# Apply this change during the demo to trigger the function call monitor.
+# Simulates a developer adding dangerous logging of PII data.
+
+--- a/src/services/userService.ts
++++ b/src/services/userService.ts
+@@ -1,5 +1,6 @@
+ import { db } from "../utils/database";
+ import { logger } from "../utils/logger";
++import { logSensitiveData } from "../utils/debug";
+
+ export async function getUserById(id: string): Promise<User | null> {
+   logger.info(`Fetching user ${id}`);
+   const user = await db.query("SELECT * FROM users WHERE id = $1", [id]);
++  logSensitiveData(user.rows[0]);
+   return user.rows[0] ?? null;
+ }
