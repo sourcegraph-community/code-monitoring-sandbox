@@ -1,0 +1,19 @@
+# Demo 02: "Critical Config File Changes"
+# Monitor query: file:db/config.yaml type:diff
+#
+# Apply this change during the demo to trigger the config file monitor.
+# Simulates someone changing the database host and increasing pool size.
+
+--- a/db/config.yaml
++++ b/db/config.yaml
+@@ -4,7 +4,7 @@
+ database:
+-  host: db-primary.internal.example.com
++  host: db-staging.internal.example.com
+   port: 5432
+   name: app_production
+   ssl_mode: require
+
+   pool:
+-    max_connections: 25
++    max_connections: 100
