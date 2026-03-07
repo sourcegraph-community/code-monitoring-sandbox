@@ -2,13 +2,13 @@
 # Changes to this file should trigger Code Monitor alerts
 
 database:
-  host: db-primary.internal.example.com
+  host: db-staging.internal.example.com
   port: 5432
   name: app_production
   ssl_mode: require
 
   pool:
-    max_connections: 25
+    max_connections: 100
     idle_timeout: 300
     connection_timeout: 10
 
