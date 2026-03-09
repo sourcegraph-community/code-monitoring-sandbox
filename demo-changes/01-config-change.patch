@@ -8,8 +8,8 @@
 +++ b/db/config.yaml
 @@ -4,7 +4,7 @@
  database:
--  host: db-primary.internal.example.com
-+  host: db-staging.internal.example.com
+-  host: db-primary.internal.scip-code.org
++  host: db-staging.internal.scip-code.org
    port: 5432
    name: app_production
    ssl_mode: require

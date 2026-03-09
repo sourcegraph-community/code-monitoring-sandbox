@@ -91,7 +91,7 @@ async function printStatus() {
   ]);
 
   const hasConfigChange =
-    config.includes("host: db-staging.internal.example.com") &&
+    config.includes("host: db-staging.internal.scip-code.org") &&
     config.includes("max_connections: 100");
   const hasUserServiceChange =
     userService.includes('import { logSensitiveData } from "../utils/debug";') &&
@@ -134,7 +134,7 @@ async function ensureBackup() {
 
 function applyConfigDemoChange(content) {
   return content
-    .replace("host: db-primary.internal.example.com", "host: db-staging.internal.example.com")
+    .replace("host: db-primary.internal.scip-code.org", "host: db-staging.internal.scip-code.org")
     .replace("max_connections: 25", "max_connections: 100");
 }
 
