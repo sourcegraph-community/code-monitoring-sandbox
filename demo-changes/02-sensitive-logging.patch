@@ -1,6 +1,7 @@
 # Demo 03: "New Sensitive Log Calls"
 # Monitor query: logSensitiveData() type:diff after:"1 day ago"
 #
+# This mirrors the user service change that `npm run demo:run` applies.
 # Apply this change during the demo to trigger the function call monitor.
 # Simulates a developer adding dangerous logging of PII data.
 

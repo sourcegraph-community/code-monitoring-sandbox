@@ -1,6 +1,7 @@
 # Demo 02: "Critical Config File Changes"
 # Monitor query: file:db/config.yaml type:diff
 #
+# This mirrors the config change that `npm run demo:run` applies.
 # Apply this change during the demo to trigger the config file monitor.
 # Simulates someone changing the database host and increasing pool size.
 
@@ -8,8 +9,8 @@
 +++ b/db/config.yaml
 @@ -4,7 +4,7 @@
  database:
--  host: db-primary.internal.example.com
-+  host: db-staging.internal.example.com
+-  host: db-primary.internal.scip-code.org
++  host: db-staging.internal.scip-code.org
    port: 5432
    name: app_production
    ssl_mode: require
