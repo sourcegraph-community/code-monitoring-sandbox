@@ -8,6 +8,7 @@
     "demo:run": "npm run demo -- run",
     "demo:reset": "npm run demo -- reset",
     "demo:status": "npm run demo -- status",
+    "test": "node --test",
     "debug:users": "ts-node scripts/debug-users.ts",
     "healthcheck": "ts-node -e \"import {db} from './src/utils/database'; db.healthCheck().then(console.log)\""
   },

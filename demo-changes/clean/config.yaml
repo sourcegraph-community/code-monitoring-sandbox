@@ -1,0 +1,29 @@
+# Database Configuration - Critical File
+# Changes to this file should trigger Code Monitor alerts
+
+database:
+  host: db-primary.internal.scip-code.org
+  port: 5432
+  name: app_production
+  ssl_mode: require
+
+  pool:
+    max_connections: 25
+    idle_timeout: 300
+    connection_timeout: 10
+
+  replicas:
+    - host: db-replica-1.internal.scip-code.org
+      port: 5432
+      read_only: true
+    - host: db-replica-2.internal.scip-code.org
+      port: 5432
+      read_only: true
+
+  backup:
+    schedule: "0 2 * * *"
+    retention_days: 30
+    destination: s3://scip-code-backups/db/
+
+  credentials:
+    secret_ref: vault://secrets/db/production
