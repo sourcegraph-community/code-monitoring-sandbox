@@ -1,6 +1,5 @@
 import { db } from "../utils/database";
 import { logger } from "../utils/logger";
-import { logSensitiveData } from "../utils/debug";
 
 interface User {
   id: string;
@@ -14,7 +13,6 @@ interface User {
 export async function getUserById(id: string): Promise<User | null> {
   logger.info(`Fetching user ${id}`);
   const user = await db.query("SELECT * FROM users WHERE id = $1", [id]);
-  logSensitiveData(user.rows[0]);
   return user.rows[0] ?? null;
 }
 
